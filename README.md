@@ -179,3 +179,48 @@ You can now deploy:
 - Ingress resources
 
 - HPA
+
+## Delete the EKS Cluster (Clean Up)
+
+To delete the cluster and all associated resources:
+
+```
+terraform destroy -auto-approve
+```
+
+⏱️ Takes ~10–15 minutes.
+
+Verify:
+
+```
+aws eks list-clusters --region eu-north-1
+```
+or you can use this
+```
+eksctl get cluster --region eu-north-1
+```
+
+---
+
+## Remove Cluster from kubeconfig
+
+List contexts:
+
+```
+kubectl config get-contexts
+```
+
+Delete the EKS context:
+```
+kubectl config delete-context arn:aws:eks:eu-north-1:<ACCOUNT_ID>:cluster/notes-app-cluster
+```
+
+(Optional) Remove cluster entry:
+```
+kubectl config delete-cluster arn:aws:eks:eu-north-1:<ACCOUNT_ID>:cluster/notes-app-cluster
+```
+
+(Optional) Remove user entry:
+```
+kubectl config unset users.arn:aws:eks:eu-north-1:<ACCOUNT_ID>:cluster/notes-app-cluster
+```
