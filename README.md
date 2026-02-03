@@ -18,7 +18,7 @@ This repository provisions an Amazon EKS cluster using **Terraform**.
 ## 📁 Repository Structure
 ```
 Eks-Cluster-Terrafrom/
-├── main.tf        # Terraform & provider versions
+├── main.tf            # Terraform & provider versions
 ├── provider.tf        # AWS provider configuration
 ├── variables.tf       # Input variables
 ├── vpc.tf             # VPC, subnets, routing (No NAT Gateway)
