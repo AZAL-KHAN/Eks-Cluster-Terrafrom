@@ -1,4 +1,4 @@
-# Notes App – EKS Cluster using Terraform
+# EKS Cluster using Terraform
 
 This repository provisions an Amazon EKS cluster using **Terraform**.
 
